@@ -8,10 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/IntroScene.unity
     guid: 1e936190f1872be44a02fdbfad894899
   - enabled: 1
+    path: Assets/Scenes/Carregamento.unity
+    guid: a5f7cd93dcef4d0429a526c314d79503
+  - enabled: 1
     path: "Assets/Scenes/Sele\xE7\xE3o.unity"
     guid: 12b5fc6d417eebb48846a0c6884e36e5
+  - enabled: 1
+    path: Assets/Scenes/LoginAluno.unity
+    guid: d4f7cc131d36e8d4bbe3a95af7a7c7cf
+  - enabled: 1
+    path: Assets/Scenes/MenuAluno.unity
+    guid: ba5ed828f0e524c429002dbd2bf45ffe
   m_configObjects: {}
