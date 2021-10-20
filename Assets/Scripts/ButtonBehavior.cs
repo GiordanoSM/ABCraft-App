@@ -28,4 +28,23 @@ public class ButtonBehavior : MonoBehaviour
         theScene = PlayerPrefs.GetString("LastScene");
         SceneManager.LoadScene(int.Parse(theScene));
     }
+
+    public void ToGamesMenu(){
+        theScene = SceneManager.GetActiveScene().buildIndex.ToString();
+        PlayerPrefs.SetString("SceneBeforeGames", theScene);
+        SceneManager.LoadScene(5);
+    }
+
+    public void BackFromGames(){
+        theScene = PlayerPrefs.GetString("SceneBeforeGames");
+        SceneManager.LoadScene(int.Parse(theScene));
+    }
+
+    public void ToMemoryGame(){
+        SceneManager.LoadScene(6);
+    }
+
+    public void BackToGames(){
+        SceneManager.LoadScene(5);
+    }
 }
