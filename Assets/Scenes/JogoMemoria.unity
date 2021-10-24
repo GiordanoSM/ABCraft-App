@@ -168,7 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: {fileID: 2139981507}
   mainCamera: {fileID: 382839878}
-  n_tokens: 8
+  turnedToken: 
+  n_turned: 0
+  n_tokens: 0
+  matching: 0
 --- !u!1 &382839878
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +719,7 @@ GameObject:
   - component: {fileID: 2139981510}
   - component: {fileID: 2139981511}
   m_Layer: 0
-  m_Name: BackToken
+  m_Name: Token0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,10 +819,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   token: {fileID: 2139981507}
+  gameBehaviour: {fileID: 128490902}
   faces:
   - {fileID: 21300000, guid: 9785689b49755d845851f0710d027f7d, type: 3}
   - {fileID: 21300000, guid: 30a22cf96e6586643b51c42c67ed20c6, type: 3}
   - {fileID: 21300000, guid: ce0bbc0239d9f83458229deb7a5129ad, type: 3}
   - {fileID: 21300000, guid: dbd6cdb32e1c4ad43a32ce70139600d9, type: 3}
   back: {fileID: 21300000, guid: 25e83f8b9c3f472438baab6268450bca, type: 3}
-  faceIndex: 1
+  faceIndex: 0

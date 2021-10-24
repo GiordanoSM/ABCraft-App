@@ -7,13 +7,14 @@ public class GameBehaviour : MonoBehaviour
     public GameObject token;
     public GameObject mainCamera;
     public static System.Random rnd = new System.Random();
+    public string turnedToken = "";
+    public int n_turned = 0;
+    public int n_tokens;
+    public bool matching = false;
     
     Vector3 pos;
     GameObject new_token;
     List<int> faceIndexes = new List<int> {0, 1, 2, 3, 0, 1, 2, 3};
-    int[] visibleFaces= {};
-    int n_tokens;
-    int shuffleNum = 0;
 
     float camera_height;
     float camera_width;
@@ -25,7 +26,7 @@ public class GameBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        n_tokens = token.GetComponent<MainToken>().faces.Length * 2;
+        n_tokens = token.GetComponent<TokenBehaviour>().faces.Length * 2;
 
         camera_height = mainCamera.GetComponent<Camera>().orthographicSize * 2;
         camera_width = mainCamera.GetComponent<Camera>().aspect * camera_height;
@@ -39,8 +40,8 @@ public class GameBehaviour : MonoBehaviour
         pos = new Vector3(margin_x + token_size/2 - camera_width/2, camera_height/2 - token_size, 0);
         token.GetComponent<Transform>().position = pos;
         list_index = rnd.Next(faceIndexes.Count);
-        print(list_index);
-        token.GetComponent<MainToken>().faceIndex = faceIndexes[list_index];
+
+        token.GetComponent<TokenBehaviour>().faceIndex = faceIndexes[list_index];
         faceIndexes.RemoveAt(list_index);
 
         // Configuration of the other tokens
@@ -52,8 +53,9 @@ public class GameBehaviour : MonoBehaviour
             }
             new_token = Instantiate(token, pos, Quaternion.identity);
             list_index = rnd.Next(faceIndexes.Count);
-            print(list_index);
-            new_token.GetComponent<MainToken>().faceIndex = faceIndexes[list_index];
+
+            new_token.GetComponent<TokenBehaviour>().faceIndex = faceIndexes[list_index];
+            new_token.name = "Token" + i;
             faceIndexes.RemoveAt(list_index);
         }
     }
