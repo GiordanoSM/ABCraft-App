@@ -13,6 +13,12 @@ public class FormBehaviour : MonoBehaviour
     public AudioSource rightSound;
     public AudioSource wrongSound;
 
+    public bool locked = true;
+
+    Vector2 mousePosition;
+
+    float deltaX;
+    float deltaY;
 
     public void Awake()
     {
@@ -22,5 +28,12 @@ public class FormBehaviour : MonoBehaviour
 
     public void ChangeForm(int formIndex){
         spriteRenderer.sprite = forms[formIndex];
+    }
+
+    public void OnMouseDrag(){
+        if (!locked){
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector2(mousePosition.x, mousePosition.y);
+        }
     }
 }
