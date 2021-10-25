@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TokenBehaviour : MonoBehaviour
 {
     public GameObject token;
+    public GameObject endPopup;
+    public GameObject endClick;
     public GameObject gameBehaviour;
     SpriteRenderer spriteRenderer;
     public Sprite[] faces;
@@ -36,7 +37,8 @@ public class TokenBehaviour : MonoBehaviour
                 }
             }
             if (gameBehaviour.GetComponent<GameBehaviour>().n_turned == gameBehaviour.GetComponent<GameBehaviour>().n_tokens){
-                SceneManager.LoadScene(5);
+                endPopup.SetActive(true);
+                endClick.SetActive(true);
             }
         }
 
