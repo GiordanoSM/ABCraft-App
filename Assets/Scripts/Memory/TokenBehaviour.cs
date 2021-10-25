@@ -13,6 +13,10 @@ public class TokenBehaviour : MonoBehaviour
     public Sprite back;
     public int faceIndex;
 
+    public AudioSource endSound;
+    public AudioSource rightSound;
+    public AudioSource wrongSound;
+
     GameObject turned_token;
 
     public void OnMouseDown(){
@@ -31,6 +35,7 @@ public class TokenBehaviour : MonoBehaviour
                         StartCoroutine(Unturn(turned_token));
                     }
                     else{
+                        rightSound.Play();
                         gameBehaviour.GetComponent<GameBehaviour>().turnedToken = "";
                         gameBehaviour.GetComponent<GameBehaviour>().n_turned += 2;
                     }              
@@ -39,6 +44,7 @@ public class TokenBehaviour : MonoBehaviour
             if (gameBehaviour.GetComponent<GameBehaviour>().n_turned == gameBehaviour.GetComponent<GameBehaviour>().n_tokens){
                 endPopup.SetActive(true);
                 endClick.SetActive(true);
+                endSound.Play();
             }
         }
 
@@ -46,6 +52,7 @@ public class TokenBehaviour : MonoBehaviour
 
     IEnumerator Unturn(GameObject turned_token){
         yield return new WaitForSeconds(0.5f);
+        wrongSound.Play();
         spriteRenderer.sprite = back;
         turned_token.GetComponent<SpriteRenderer>().sprite = back;
         gameBehaviour.GetComponent<GameBehaviour>().turnedToken = "";
