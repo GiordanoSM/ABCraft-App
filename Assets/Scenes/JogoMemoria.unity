@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128490903}
   - component: {fileID: 128490904}
+  - component: {fileID: 128490905}
   m_Layer: 0
   m_Name: GameBehaviour
   m_TagString: Untagged
@@ -172,6 +173,19 @@ MonoBehaviour:
   n_turned: 0
   n_tokens: 0
   matching: 0
+--- !u!114 &128490905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128490902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d2ee9659f8cd049a0ec25f2ef51f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theScene: 
 --- !u!1 &382839878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,9 +1330,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 128490905}
         m_TargetAssemblyTypeName: ButtonBehavior, Assembly-CSharp
-        m_MethodName: BackFromGames
+        m_MethodName: BackToGames
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
