@@ -44,6 +44,10 @@ public class ButtonBehavior : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
+    public void ToFormsGame(){
+        SceneManager.LoadScene(7);
+    }
+
     public void BackToGames(){
         SceneManager.LoadScene(5);
     }

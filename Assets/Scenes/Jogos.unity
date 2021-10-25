@@ -1410,9 +1410,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 542098639}
         m_TargetAssemblyTypeName: ButtonBehavior, Assembly-CSharp
-        m_MethodName: ToStudentsMenu
+        m_MethodName: ToFormsGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

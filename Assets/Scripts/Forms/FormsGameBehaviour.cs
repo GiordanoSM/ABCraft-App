@@ -20,6 +20,7 @@ public class FormsGameBehaviour : MonoBehaviour
     float margin_x;
     int list_index;
     int n_forms;
+    public int n_done = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +39,15 @@ public class FormsGameBehaviour : MonoBehaviour
         list_index = rnd.Next(formIndexes.Count);
 
         form.GetComponent<FormBehaviour>().ChangeForm(formIndexes[list_index]);
+        form.GetComponent<FormBehaviour>().initialPos = pos;
         if (formIndexes[list_index] >= (int) n_forms/2){
             form.GetComponent<FormBehaviour>().locked = false;
             form.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            form.name = "Form" + (formIndexes[list_index] % ((int) n_forms/2));
         }
         else{
             form.GetComponent<FormBehaviour>().locked = true;
+            form.name = "Hole" + (formIndexes[list_index] % ((int) n_forms/2));
         }
         formIndexes.RemoveAt(list_index);
 
@@ -58,14 +62,17 @@ public class FormsGameBehaviour : MonoBehaviour
             list_index = rnd.Next(formIndexes.Count);
 
             new_form.GetComponent<FormBehaviour>().ChangeForm(formIndexes[list_index]);
-            new_form.name = "Form" + i;
+            new_form.GetComponent<FormBehaviour>().initialPos = pos;
 
+            // If not hole
             if (formIndexes[list_index] >= (int) n_forms/2){
                 new_form.GetComponent<FormBehaviour>().locked = false;
                 new_form.GetComponent<SpriteRenderer>().sortingOrder = 1;
+                new_form.name = "Form" + (formIndexes[list_index] % ((int) n_forms/2));
             }
             else{
                 new_form.GetComponent<FormBehaviour>().locked = true;
+                new_form.name = "Hole" + (formIndexes[list_index] % ((int) n_forms/2));
             }
 
             formIndexes.RemoveAt(list_index);

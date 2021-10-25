@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JogoMemoria.unity
     guid: 696a0c7ce335bd14e93573806d928b59
+  - enabled: 1
+    path: Assets/Scenes/JogoFormas.unity
+    guid: 1b39ad84c49b3ac498be035194650d19
   m_configObjects: {}
