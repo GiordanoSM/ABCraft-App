@@ -51,8 +51,8 @@ public class TokenBehaviour : MonoBehaviour
     }
 
     IEnumerator Unturn(GameObject turned_token){
-        yield return new WaitForSeconds(0.5f);
         wrongSound.Play();
+        yield return new WaitForSeconds(0.5f);
         spriteRenderer.sprite = back;
         turned_token.GetComponent<SpriteRenderer>().sprite = back;
         gameBehaviour.GetComponent<GameBehaviour>().turnedToken = "";

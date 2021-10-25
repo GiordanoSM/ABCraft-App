@@ -47,6 +47,7 @@ public class FormsGameBehaviour : MonoBehaviour
         }
         else{
             form.GetComponent<FormBehaviour>().locked = true;
+            form.GetComponent<SpriteRenderer>().sortingOrder = 0;
             form.name = "Hole" + (formIndexes[list_index] % ((int) n_forms/2));
         }
         formIndexes.RemoveAt(list_index);
@@ -72,6 +73,7 @@ public class FormsGameBehaviour : MonoBehaviour
             }
             else{
                 new_form.GetComponent<FormBehaviour>().locked = true;
+                new_form.GetComponent<SpriteRenderer>().sortingOrder = 0;
                 new_form.name = "Hole" + (formIndexes[list_index] % ((int) n_forms/2));
             }
 
