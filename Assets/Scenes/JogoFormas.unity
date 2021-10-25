@@ -707,7 +707,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 93d15ec3736de3849bb51e2953ef01fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a575fdd221dd814c8275cfe3b733810, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -754,7 +754,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 645880c0d1c37bf4ba5974d845db1255, type: 3}
   - {fileID: 21300000, guid: daf776ce9d7fbb84d8ea536ada731b04, type: 3}
   - {fileID: 21300000, guid: 5429dd3edaa2d0d438104b87cd66203d, type: 3}
-  formIndex: 0
   endSound: {fileID: 658912150}
   rightSound: {fileID: 73349206}
   wrongSound: {fileID: 658912150}

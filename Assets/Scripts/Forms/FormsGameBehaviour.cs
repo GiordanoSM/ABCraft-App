@@ -39,7 +39,6 @@ public class FormsGameBehaviour : MonoBehaviour
 
         form.GetComponent<FormBehaviour>().ChangeForm(formIndexes[list_index]);
         formIndexes.RemoveAt(list_index);
-        print(list_index);
 
         // Configuration of the other forms
         for(int i =1; i< n_forms; i++){
@@ -54,7 +53,36 @@ public class FormsGameBehaviour : MonoBehaviour
             new_form.GetComponent<FormBehaviour>().ChangeForm(formIndexes[list_index]);
             new_form.name = "Form" + i;
             formIndexes.RemoveAt(list_index);
-            print(list_index);
+            new_form.AddComponent<PolygonCollider2D>();
+        }
+        form.AddComponent<PolygonCollider2D>();
+    }
+
+    public void setObj(int id_sprite, GameObject obj){
+        Vector2[] p_triangle = {new Vector2(), new Vector2(), new Vector2()};
+        Vector2[] p_star = {
+            new Vector2(), new Vector2(), new Vector2(),
+            new Vector2(), new Vector2(), new Vector2(),
+            new Vector2(), new Vector2()
+        };
+
+
+        obj.GetComponent<FormBehaviour>().ChangeForm(id_sprite);
+
+        switch (id_sprite%4)
+        {
+            case 0:
+                obj.AddComponent<CircleCollider2D>();
+                break;
+            case 1:
+                //obj.AddComponent<BoxCollider2D>();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
         }
     }
 }
