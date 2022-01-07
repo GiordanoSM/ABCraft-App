@@ -1,2 +1,2 @@
 # ABCraft-App
-A simple App to help in small children education using Unity
+A simple Unity Project of an app prototype made to help in small children education during the pandemic.
